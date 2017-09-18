@@ -83,9 +83,4 @@ while l <  3000 :
         ic = OrdenPorInsercion (a3)
         r4 = quicksort (a4)
         print (l, bc, sc, ic, cnt3)
-        # print (arr)
-        # print (a1)
-        # print (a2)
-        # print (a3)
-        # print (r4)
     l *=  2
