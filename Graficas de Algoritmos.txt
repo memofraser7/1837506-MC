@@ -1,0 +1,91 @@
+import random
+import copy
+
+cnt1=0
+def burbuja(A):
+    global cnt1
+    for i in range (1,len(arr)):
+        for j in range (0,len(arr)-1):
+            if (arr[j+1]<arr[j]):
+                cnt1+=1
+                aux=arr[j]
+                arr[j]=arr[j+1]
+                arr[j+1]=aux
+    print("burbuja")
+    return cnt1
+
+    
+cnt2=0
+def OrdenPorInsercion(arr):
+        global cnt2
+        for indice in range (1, len(arr)):
+                valor=arr[indice] 
+                i=indice-1          
+                while i>=0:
+                        cnt2+=1
+                        if valor<arr[i]: 
+                                arr[i+1]=arr[i] 
+                                arr[i]=valor
+                                i-=1
+                        else:
+                                break
+        return cnt2
+
+cnt3=0
+def quicksort(arr):
+    global cnt3
+    if len(arr)<=1:
+        return arr
+    p=arr.pop(0)
+    menores,mayores= [], []
+    for e in arr:
+        cnt3+=1
+        if e<=p:
+            menores.append(e)
+        else:
+            mayores.append(e)
+    return quicksort(menores) + [p] + quicksort(mayores)
+
+cnt4 = 0
+def selection(arr):
+    global cnt4
+    for i in range(0,len(arr)-1):
+                    val = i
+                    for j in range(i+1, len(arr)):
+                            if arr[j] < arr[val]:
+                                    val = j
+                            if val != i:
+                             aux = arr[i]
+                             arr[i] = arr[val]
+                             arr[val] = aux
+                             cnt4+=1
+                    return cnt4
+
+
+
+
+
+def  rndar ( lon ):
+    arr = []
+    for r in range (lon):
+        arr.append (random.randint ( 0 , lon))
+    return arr
+
+
+l =  4
+print ( " L " , " B " , " S " , " I " , " Q " )
+while l <  20 :
+    for replica in range ( 30 ):
+        arr = rndar (l)
+        a1, a2, a3, a4 =   copy.deepcopy (arr), copy.deepcopy (arr), copy.deepcopy (arr), copy.deepcopy(arr)
+        bc = burbuja (a1)
+        sc = selection (a2)
+        ic = OrdenPorInsercion (a3)
+        r4 = quicksort (a4)
+        print (l, bc, sc, ic,cnt3)
+        # print (arr)
+        # print (a1)
+        # print (a2)
+        # print (a3)
+        # print (r4)
+    l *=  2
