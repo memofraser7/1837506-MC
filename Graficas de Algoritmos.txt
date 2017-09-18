@@ -74,15 +74,15 @@ def  rndar ( lon ):
 
 l =  4
 print ( " L " , " B " , " S " , " I " , " Q " )
-while l <  20 :
-    for replica in range ( 30 ):
+while l <  3000 :
+    for replica in range ( 1 ):
         arr = rndar (l)
         a1, a2, a3, a4 =   copy.deepcopy (arr), copy.deepcopy (arr), copy.deepcopy (arr), copy.deepcopy(arr)
         bc = burbuja (a1)
         sc = selection (a2)
         ic = OrdenPorInsercion (a3)
         r4 = quicksort (a4)
-        print (l, bc, sc, ic,cnt3)
+        print (l, bc, sc, ic, cnt3)
         # print (arr)
         # print (a1)
         # print (a2)
